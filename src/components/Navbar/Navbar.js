@@ -49,9 +49,11 @@ const Navbar = () => {
           </Link>
         ))}
 
-<div ref={dropDownRef} className="relative mx-auto w-fit">
-      <button onClick={() => setOpen((prev) => !prev)} className="flex items-center gap-2">Services <Image className="w-6" src={downArrow} alt="Logo" /></button>
-      <ul className={`${open ? 'visible' : 'invisible'} bg-[#F9F5FF] absolute top-10 z-50 w-44 rounded space-y-2`}>
+
+{/* Dropdown func */}
+<div ref={dropDownRef} onMouseLeave={() => setOpen(false)} className="relative mx-auto w-fit">
+      <Link href={"/services"} onMouseOver={() => setOpen((prev) => !prev)} className="flex items-center gap-2">Services <Image className="w-6" src={downArrow} alt="Logo" /></Link>
+      <ul className={`${open ? 'visible' : 'invisible'} bg-[#F9F5FF] absolute z-50 w-44 rounded space-y-2`}>
         {items.map((item, idx) => (
           <li 
             key={idx}

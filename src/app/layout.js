@@ -14,9 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html className="max-w-[1400px] px-5" lang="en">
       <body className={inter.className}>
+        <Navbar />
         {children}
-        </body>
-      <Footer />
+        <Footer />
+      </body>
     </html>
   );
 }
